@@ -1,0 +1,647 @@
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #388E3C;
+    --accent-color: #8BC34A;
+    --light-color: #F1F8E9;
+    --dark-color: #1B5E20;
+    --text-color: #333;
+    --bg-color: #f5f7fa;
+    --card-bg: white;
+    --gradient: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+    --shadow: 0 4px 20px rgba(0,0,0,0.1);
+    --border-radius: 8px;
+}
+
+[data-theme="dark"] {
+    --primary-color: #4CAF50;
+    --secondary-color: #388E3C;
+    --accent-color: #8BC34A;
+    --light-color: #2d3748;
+    --dark-color: #1B5E20;
+    --text-color: #e2e8f0;
+    --bg-color: #1a202c;
+    --card-bg: #2d3748;
+    --gradient: linear-gradient(135deg, #4CAF50 0%, #388E3C 100%);
+    --shadow: 0 4px 20px rgba(0,0,0,0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, var(--bg-color) 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+/* MODERN HEADER STYLES */
+.modern-header {
+    background: var(--gradient);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    margin-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.modern-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.modern-header::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    backdrop-filter: blur(10px);
+    flex-shrink: 0;
+}
+
+.logo-text h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+    letter-spacing: -0.5px;
+}
+
+.logo-text p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.header-stats {
+    display: flex;
+    gap: 2rem;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    display: block;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.action-btn {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 0.7rem 1.2rem;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    white-space: nowrap;
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+.action-btn.primary {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--dark-color);
+}
+
+.action-btn.primary:hover {
+    background: white;
+}
+
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white;
+    padding: 0.7rem;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+}
+
+.theme-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Fő tartalom - Főoldal */
+.main-content {
+    background: var(--card-bg);
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.welcome-section {
+    margin-bottom: 3rem;
+}
+
+.welcome-section h2 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.welcome-section p {
+    color: var(--text-color);
+    line-height: 1.6;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.feature-card {
+    background: var(--light-color);
+    padding: 2rem;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+.feature-card p {
+    color: var(--text-color);
+    line-height: 1.5;
+}
+
+.feature-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+    width: 100%;
+}
+
+.feature-btn:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* BMI oldal stílusai */
+.calculator {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.calculator-form, .calculator-result {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    color: var(--text-color);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+input, select, button {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-color: var(--light-color);
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--secondary-color);
+}
+
+.result-item {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    color: var(--text-color);
+}
+
+.bmi-category {
+    font-weight: bold;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.underweight {
+    background-color: #FFEB3B;
+    color: #333;
+}
+
+.normal {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.overweight {
+    background-color: #FF9800;
+    color: white;
+}
+
+.obese {
+    background-color: #F44336;
+    color: white;
+}
+
+/* Étrend oldal stílusai */
+.food-log {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.food-form, .food-list {
+    background-color: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 15px;
+    color: var(--text-color);
+}
+
+.food-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    margin-bottom: 0.5rem;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    color: var(--text-color);
+}
+
+.food-item button {
+    width: auto;
+    padding: 0.5rem 1rem;
+    background-color: #f44336;
+}
+
+.food-item button:hover {
+    background-color: #d32f2f;
+}
+
+.stats {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    color: var(--text-color);
+}
+
+/* Profil modal */
+.profil-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.profil-content {
+    background: var(--card-bg);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: var(--shadow);
+    max-width: 500px;
+    width: 90%;
+    color: var(--text-color);
+}
+
+.profil-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-color);
+}
+
+.profil-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: var(--gradient);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 1rem;
+    color: white;
+}
+
+.profil-info {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.profil-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.profil-stat {
+    text-align: center;
+    padding: 1rem;
+    background: var(--light-color);
+    border-radius: 10px;
+}
+
+/* Általános stílusok */
+h2 {
+    color: var(--dark-color);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+h3 {
+    color: var(--dark-color);
+    margin-bottom: 1rem;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem;
+    }
+    
+    .modern-header {
+        padding: 1.5rem;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .logo-area {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.5rem;
+    }
+    
+    .logo-text p {
+        font-size: 0.85rem;
+    }
+    
+    .header-stats {
+        order: 3;
+        width: 100%;
+        justify-content: space-around;
+        gap: 1rem;
+    }
+    
+    .stat-item {
+        flex: 1;
+    }
+    
+    .stat-value {
+        font-size: 1.3rem;
+    }
+    
+    .stat-label {
+        font-size: 0.75rem;
+    }
+    
+    .header-actions {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .action-btn {
+        padding: 0.8rem 1.5rem;
+        flex: 1;
+        max-width: 200px;
+        justify-content: center;
+    }
+    
+    .main-content {
+        padding: 2rem 1.5rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .calculator, .food-log {
+        grid-template-columns: 1fr;
+    }
+    
+    .profil-stats {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .modern-header {
+        padding: 1rem;
+    }
+    
+    .logo-text h1 {
+        font-size: 1.3rem;
+    }
+    
+    .header-stats {
+        flex-wrap: wrap;
+    }
+    
+    .stat-item {
+        flex: 0 0 45%;
+        margin-bottom: 0.5rem;
+    }
+    
+    .calculator-form, .food-form,
+    .calculator-result, .food-list {
+        padding: 1rem;
+    }
+    
+    .feature-card {
+        padding: 1.5rem;
+    }
+}
+/* Tablet és mobil nézet */
+@media (max-width: 1024px) {
+    .theme-toggle {
+        border-radius: 20px;
+        width: auto;
+        padding: 0.7rem 1rem;
+        gap: 0.5rem;
+    }
+    
+    .theme-toggle::after {
+        content: "Téma";
+        font-weight: 500;
+        font-size: 0.85rem;
+    }
+}
+
+/* Kis mobilok */
+@media (max-width: 480px) {
+    .theme-toggle {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.8rem;
+    }
+    
+    .theme-toggle::after {
+        font-size: 0.75rem;
+    }
+}
+
+/* Nagyon kis képernyők */
+@media (max-width: 360px) {
+    .theme-toggle {
+        padding: 0.5rem 0.7rem;
+    }
+    
+    .theme-toggle::after {
+        content: ""; /* Eltünteti a szöveget nagyon kis képernyőkön */
+    }
+}

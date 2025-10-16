@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Étrend Napló - Egészséges élet kalkulátor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="modern-header">
+            <div class="header-content">
+                <div class="logo-area">
+                    <div class="logo-icon">🌿</div>
+                    <div class="logo-text">
+                        <h1>Egészséges Élet Kalkulátor</h1>
+                        <p>Étrend napló</p>
+                    </div>
+                </div>
+                
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Ételek</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Kalória</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">0</span>
+                        <span class="stat-label">Átlag</span>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="action-btn primary" onclick="location.href='index.html'">
+                        <span>🏠</span>
+                        Főoldal
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <h2>Étrend napló</h2>
+            
+            <div class="food-log">
+                <div class="food-form">
+                    <h3>Új étel hozzáadása</h3>
+                    <div class="form-group">
+                        <label for="etel-nev">Étel neve</label>
+                        <input type="text" id="etel-nev" placeholder="pl. Alma">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="etel-kaloria">Kalória (kcal)</label>
+                        <input type="number" id="etel-kaloria" min="1" placeholder="pl. 52">
+                    </div>
+                    
+                    <button id="etel-hozzaadas">Hozzáadás</button>
+                </div>
+                
+                <div class="food-list">
+                    <h3>Felvett ételek</h3>
+                    <div id="etel-lista">
+                        <p>Még nincsenek felvett ételek</p>
+                    </div>
+                    
+                    <div class="stats">
+                        <h4>Statisztikák</h4>
+                        <p>Összes étel: <span id="osszes-etel">0</span></p>
+                        <p>Összes kalória: <span id="osszes-kaloria">0</span> kcal</p>
+                        <p>Átlagos kalória/étel: <span id="atlag-kaloria">0</span> kcal</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

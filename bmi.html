@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Kalkulátor - Egészséges élet kalkulátor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="modern-header">
+            <div class="header-content">
+                <div class="logo-area">
+                    <div class="logo-icon">🌿</div>
+                    <div class="logo-text">
+                        <h1>Egészséges Élet Kalkulátor</h1>
+                        <p>BMI kalkulátor</p>
+                    </div>
+                </div>
+                
+                <div class="header-stats">
+                    <div class="stat-item">
+                        <span class="stat-value">-</span>
+                        <span class="stat-label">BMI</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">-</span>
+                        <span class="stat-label">Kalória</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value">-</span>
+                        <span class="stat-label">Egészség</span>
+                    </div>
+                </div>
+                
+                <div class="header-actions">
+                    <button class="action-btn primary" onclick="location.href='index.html'">
+                        <span>🏠</span>
+                        Főoldal
+                    </button>
+                </div>
+            </div>
+        </header>
+        
+        <main class="main-content">
+            <h2>BMI és kalória kalkulátor</h2>
+            
+            <div class="calculator">
+                <div class="calculator-form">
+                    <h3>Adatok megadása</h3>
+                    <div class="form-group">
+                        <label for="suly">Testsúly (kg)</label>
+                        <input type="number" id="suly" min="1" max="300" placeholder="pl. 70">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="magassag">Magasság (cm)</label>
+                        <input type="number" id="magassag" min="50" max="250" placeholder="pl. 175">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="kor">Életkor</label>
+                        <input type="number" id="kor" min="1" max="120" placeholder="pl. 30">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="nem">Nem</label>
+                        <select id="nem">
+                            <option value="ferfi">Férfi</option>
+                            <option value="no">Nő</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="aktivitas">Aktivitási szint</label>
+                        <select id="aktivitas">
+                            <option value="1.2">Ülő életmód (kevés vagy semmi mozgás)</option>
+                            <option value="1.375">Enyhén aktív (könnyű testmozgás heti 1-3 nap)</option>
+                            <option value="1.55">Mérsékelten aktív (közepes testmozgás heti 3-5 nap)</option>
+                            <option value="1.725">Nagyon aktív (intenzív testmozgás heti 6-7 nap)</option>
+                            <option value="1.9">Extrém aktív (nagyon kemény testmozgás, fizikai munka)</option>
+                        </select>
+                    </div>
+                    
+                    <button id="szamitas-gomb">Számítás</button>
+                </div>
+                
+                <div class="calculator-result">
+                    <h3>Eredmények</h3>
+                    <div id="bmi-eredmeny" class="result-item">
+                        <p>Adja meg az adatokat a számításhoz</p>
+                    </div>
+                    
+                    <div id="kaloria-eredmeny" class="result-item">
+                        <p>Adja meg az adatokat a számításhoz</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
